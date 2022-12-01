@@ -7,7 +7,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 // Import Map and Marker
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, Circle} from 'react-native-maps';
 
 const App = () => {
   return (
@@ -31,6 +31,16 @@ const App = () => {
             onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
             title={'Test Marker'}
             description={'This is a description of the marker'}
+          />
+          <Circle
+            center={{
+              latitude: 23.810331,
+              longitude: 90.412521,
+            }}
+            radius={800}
+            strokeWidth={2}
+            strokeColor={'#1a66ff'}
+            fillColor={'rgba(230,238,255,0.5)'}
           />
         </MapView>
       </View>
